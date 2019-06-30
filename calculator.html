@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title> My Calculator</title>
+       <link rel="stylesheet" href="calccss.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    </head>
+    
+    
+<body >
+   
+    <h1 style="font-size: 50px;">Enter the values</h1>
+    <div>
+        <div class="row">
+            <div  class="col-4">
+                <form class="form1">
+                    Number1:
+                <input type="text" id="num1">
+                    Operator:
+                <input type="text" id="op" placeholder="e.g *,+,/,%,-">
+                    Number2:
+                <input type="text" id="num2">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <button type="button" onclick="dis()" >Submit</button>
+    <br>
+    
+    
+    <p id="check">Result:</p>
+    
+    
+        
+        
+        
+        
+        
+        
+        
+    <script>
+        function dis()
+        {
+            var x = document.getElementById("num1").value;
+            var o = document.getElementById("op").value;
+            var y = document.getElementById("num2").value;
+            
+            if(!x || !y || !o)
+                alert("Enter values");
+            
+            else if(o == '+')
+                {
+                    var res = parseFloat(x)+parseFloat(y);
+                    document.getElementById("check").innerHTML = res;
+                }
+            else if(o == '-')
+                {
+                    var res = parseFloat(x)-parseFloat(y);
+                    document.getElementById("check").innerHTML = res;
+                }
+            else if(o == '*')
+                {
+                    var res = parseFloat(x)*parseFloat(y);
+                    document.getElementById("check").innerHTML = res;
+                }
+            else if(o == '/')
+                {   if (y !== 0)
+                    {   var res = parseFloat(x)/parseFloat(y);
+                        document.getElementById("check").innerHTML = res;
+                    }
+                    else
+                        document.getElementById("check").innerHTML = "Can't divide by 0";
+                }
+            else if(o == '%')
+                {
+                    var res = parseFloat(x)%parseFloat(y);
+                    document.getElementById("check").innerHTML = res;
+                }
+            else 
+                document.getElementById("check").innerHTML = "Wrong input";
+        }
+    
+    </script>
+
+    </body>
+
+</html>
